@@ -1,0 +1,20 @@
+version: "4.22.1"
+
+services:
+  exemplophpcomapache:
+    image: php:8-apache
+    container_name: exemplophpcomapache
+    restart: always
+    ports:
+      - "8081:80"
+    networks:
+      - thiago_network
+    volumes:
+      - .:/var/www/html/
+
+volumes:
+  persistent:
+
+networks:
+  thiago_network:
+    external: true
